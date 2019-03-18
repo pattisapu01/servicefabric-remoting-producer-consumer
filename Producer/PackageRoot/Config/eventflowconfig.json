@@ -1,0 +1,39 @@
+{
+  "inputs": [
+    {
+      "type": "EventSource",
+      "sources": [
+        //{ "providerName": "Microsoft-ServiceFabric-Services" },
+        //{ "providerName": "Microsoft-ServiceFabric-Actors" },
+        { "providerName": "producer-events" }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "type": "drop",
+      "include": "Level == Verbose"
+    }
+  ],
+  "outputs": [
+    //{
+    //  "type": "ApplicationInsights",
+    //  // (replace the following value with your AI resource's instrumentation key)
+    //  "instrumentationKey": "5dd806f0-8bf8-4f28-9a5e-19cca67d5472",
+    //  "filters": [
+    //    {
+    //      "type": "metadata",
+    //      "metadata": "metric",
+    //      "include": "ProviderName == creditsuisse-prime-se-cloud-CDCSyncService && EventName == ProcessedCountMetric",
+    //      "operationProperty": "operation",
+    //      "elapsedMilliSecondsProperty": "elapsedMilliSeconds",
+    //      "recordCountProperty": "recordCount"
+    //    }
+    //  ]
+    //}
+    {
+      "type":  "StdOutput"
+    }
+  ],
+  "schemaVersion": "2016-08-11"
+}
